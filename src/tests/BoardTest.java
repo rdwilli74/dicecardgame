@@ -11,6 +11,11 @@ import dicecardgame.Card;
 import dicecardgame.InvalidBoard;
 import dicecardgame.InvalidCard;
 
+/**
+ * @author mom
+ * The method will test the board object for completeness and functionality.
+ * 
+ */
 public class BoardTest
 {
 
