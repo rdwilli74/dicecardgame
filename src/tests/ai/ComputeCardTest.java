@@ -1,14 +1,14 @@
-package tests;
+package tests.ai;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import dicecardgame.Board;
-import dicecardgame.ComputeCard;
-import dicecardgame.Hand;
-import dicecardgame.InvalidBoard;
-import dicecardgame.InvalidCard;
+import dicecardgame.ai.ComputeCard;
+import dicecardgame.board.Board;
+import dicecardgame.exceptions.InvalidBoard;
+import dicecardgame.exceptions.InvalidCard;
+import dicecardgame.hand.Hand;
 
 public class ComputeCardTest
 {

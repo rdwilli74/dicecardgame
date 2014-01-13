@@ -1,7 +1,10 @@
-package dicecardgame;
+package dicecardgame.hand;
 
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+
+import dicecardgame.card.Card;
+import dicecardgame.exceptions.InvalidCard;
 
 /**
  * @author mom

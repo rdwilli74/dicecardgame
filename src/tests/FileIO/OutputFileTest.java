@@ -1,4 +1,4 @@
-package tests;
+package tests.FileIO;
 
 import static org.junit.Assert.*;
 
@@ -6,7 +6,7 @@ import java.io.IOException;
 
 import org.junit.Test;
 
-import dicecardgame.OutputFile;
+import dicecardgame.fileIO.OutputFile;
 
 public class OutputFileTest {
 

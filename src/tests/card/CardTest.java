@@ -1,11 +1,11 @@
-package tests;
+package tests.card;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
-import dicecardgame.Card;
-import dicecardgame.InvalidCard;
+import dicecardgame.card.Card;
+import dicecardgame.exceptions.InvalidCard;
 
 public class CardTest
 {

@@ -1,7 +1,10 @@
 /**
  * 
  */
-package dicecardgame;
+package dicecardgame.ai;
+
+import dicecardgame.board.Board;
+import dicecardgame.hand.Hand;
 
 /**
  * @author mom

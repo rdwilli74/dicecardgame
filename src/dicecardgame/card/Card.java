@@ -1,7 +1,9 @@
-package dicecardgame;
+package dicecardgame.card;
 
 import java.util.HashMap;
 import java.util.Map;
+
+import dicecardgame.exceptions.InvalidCard;
 
 /**
  * @author mom

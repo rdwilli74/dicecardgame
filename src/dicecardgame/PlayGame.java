@@ -3,6 +3,13 @@
  */
 package dicecardgame;
 
+import dicecardgame.ai.ComputeCard;
+import dicecardgame.board.Board;
+import dicecardgame.exceptions.InvalidBoard;
+import dicecardgame.exceptions.InvalidCard;
+import dicecardgame.fileIO.InputFile;
+import dicecardgame.hand.Hand;
+
 /**
  * @author mom
  * 

@@ -1,4 +1,4 @@
-package dicecardgame;
+package dicecardgame.exceptions;
 
 /**
  * @author mom

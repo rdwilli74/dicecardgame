@@ -1,4 +1,4 @@
-package tests;
+package tests.board;
 
 import static org.junit.Assert.*;
 
@@ -6,10 +6,10 @@ import java.util.ArrayList;
 
 import org.junit.Test;
 
-import dicecardgame.Board;
-import dicecardgame.Card;
-import dicecardgame.InvalidBoard;
-import dicecardgame.InvalidCard;
+import dicecardgame.board.Board;
+import dicecardgame.card.Card;
+import dicecardgame.exceptions.InvalidBoard;
+import dicecardgame.exceptions.InvalidCard;
 
 /**
  * @author mom

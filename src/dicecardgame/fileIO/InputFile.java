@@ -1,4 +1,4 @@
-package dicecardgame;
+package dicecardgame.fileIO;
 
 import java.io.IOException;
 import java.nio.file.Files;
