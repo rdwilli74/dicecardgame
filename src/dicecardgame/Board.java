@@ -32,6 +32,10 @@ public class Board
 
     }
 
+    public Board(String[] board) throws InvalidBoard{
+        addBoard(board);
+    }
+    
     /**
      * Takes in a string array of the suit lines in the input file.
      * 

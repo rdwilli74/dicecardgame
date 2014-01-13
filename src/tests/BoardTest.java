@@ -87,5 +87,29 @@ public class BoardTest
         {
             fail("Invalid Board: " + e.getMessage());
         }
+        
+        // test the other constructor
+        try
+        {
+            board = new Board(b);
+            cards = new ArrayList<Card>();
+            cards.add(new Card("7C"));
+            cards.add(new Card("6D"));
+            cards.add(new Card("8D"));
+            cards.add(new Card("4S"));
+            cards.add(new Card("TS"));
+            cards.add(new Card("AH"));
+            board.addBoard(b);
+            assertEquals(board.getPlayableCards().toString(), cards.toString());
+        }
+        catch (InvalidCard e)
+        {
+            fail("Invalid card: " + e.getMessage());
+        }
+        catch (InvalidBoard e)
+        {
+            fail("Invalid Board: " + e.getMessage());
+        }
+        
     }
 }
