@@ -35,7 +35,7 @@ public class PlayGame
             Board board = new Board();
             board.addBoard(inFile.getSuits());
             ComputeCard cc = new ComputeCard(hand, board);
-
+            
         }
         catch (InvalidCard e)
         {

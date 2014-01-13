@@ -4,6 +4,8 @@
 package dicecardgame.ai;
 
 import dicecardgame.board.Board;
+import dicecardgame.card.Card;
+import dicecardgame.exceptions.InvalidCard;
 import dicecardgame.hand.Hand;
 
 /**
@@ -19,5 +21,20 @@ public class ComputeCard
     {
         this.hand = hand;
         this.board = board;
+    }
+    
+    public Card pickCard()
+    {
+        Card c = null;
+        try
+        {
+            c= new Card("2H");
+        }
+        catch (InvalidCard e)
+        {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        return c;
     }
 }

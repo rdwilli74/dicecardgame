@@ -7,7 +7,12 @@ package dicecardgame.exceptions;
  */
 public class InvalidCard extends Exception {
 
-	public InvalidCard(String msg)
+	/**
+     * 
+     */
+    private static final long serialVersionUID = -4695880888942344333L;
+
+    public InvalidCard(String msg)
 	{
 		super(msg);
 	}
