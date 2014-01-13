@@ -70,13 +70,13 @@ public class CardTest
         try
         {
             Card c = new Card("2H");
-            Card nextCard = c.getNextLowest(c);
+            Card nextCard = Card.getNextLowest(c);
             assertNull(nextCard);
             c = new Card("3S");
-            nextCard = c.getNextLowest(c);
+            nextCard = Card.getNextLowest(c);
             assertEquals(nextCard.toString(), new Card("2S").toString());
             c = new Card("AD");
-            nextCard = c.getNextLowest(c);
+            nextCard = Card.getNextLowest(c);
             assertEquals(nextCard.toString(), new Card("KD").toString());
         }
         catch (InvalidCard e)
@@ -91,13 +91,13 @@ public class CardTest
         try
         {
             Card c = new Card("2H");
-            Card nextCard = c.getNextHighest(c);
+            Card nextCard = Card.getNextHighest(c);
             assertEquals(nextCard.toString(), new Card("3H").toString());
             c = new Card("3S");
-            nextCard = c.getNextHighest(c);
+            nextCard = Card.getNextHighest(c);
             assertEquals(nextCard.toString(), new Card("4S").toString());
             c = new Card("AD");
-            nextCard = c.getNextHighest(c);
+            nextCard = Card.getNextHighest(c);
             assertNull(nextCard);
         }
         catch (InvalidCard e)

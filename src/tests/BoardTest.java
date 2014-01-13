@@ -18,7 +18,10 @@ import dicecardgame.InvalidCard;
  */
 public class BoardTest
 {
-
+    /**
+     *  First test of the board class.  This will insert a valid board and verfiy that the 
+     *  cards are valid. 
+     */
     @Test
     public void testBoard() {
         Board board = new Board();
@@ -57,6 +60,9 @@ public class BoardTest
         }
     }
 
+    /**
+     * input a valid board and compute the valid cards that can be played next for this board.
+     */
     @Test
     public void testGetPlayableCards() {
         Board board = new Board();

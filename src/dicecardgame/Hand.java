@@ -3,10 +3,20 @@ package dicecardgame;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
 
+/**
+ * @author mom
+ * Holds all the cards in your hand for this turn.
+ */
 public class Hand {
 
 	private ArrayList<Card> cards;
 	
+	/**
+	 * Take the string from the input.txt file and create an array of Cards.
+	 * 
+	 * @param handString
+	 * @throws InvalidCard
+	 */
 	public Hand(String handString) throws InvalidCard {
 		StringTokenizer st = new StringTokenizer(handString," ");
 		int count = st.countTokens();

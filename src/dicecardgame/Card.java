@@ -3,9 +3,19 @@ package dicecardgame;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * @author mom
+ *
+ * The Card object will hold all the neccessary information about a card.  It has a method to computer the next
+ * lowest and next highest cards in the deck for a given suit.
+ */
 public class Card
 {
 
+    /**
+     * @author mom
+     *  Enum to hold the valid values for a given card.
+     */
     public enum Rank
     {
         DUECE(2), THREE(3), FOUR(4), FIVE(5), SIX(6), SEVEN(7), EIGHT(8), NINE(
@@ -30,8 +40,17 @@ public class Card
     Rank rank;
     String rankString;
 
+    
+    /**
+     * Maps a string to the valid enum Rank. 
+     */
     Map<String, Rank> RankMap = new HashMap<String, Rank>();
 
+    /**
+     * @author mom
+     *
+     *  Suite holds the string 
+     */
     public enum Suit
     {
         DIAMONDS("D"), CLUBS("C"), HEARTS("H"), SPADES("S");

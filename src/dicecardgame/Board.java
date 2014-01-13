@@ -3,39 +3,47 @@ package dicecardgame;
 import java.util.ArrayList;
 import java.util.Collection;
 
-import dicecardgame.Card.Rank;
-
 public class Board
 {
-    String clubs;
-    String hearts;
-    String diamonds;
-    String spades;
+    // temp vars used to hold the string from the input file for each suit.
+    private String clubs;
+    private String hearts;
+    private String diamonds;
+    private String spades;
 
-    ArrayList<String> suits = new ArrayList<String>();;
-    Card lowClub;
-    Card highClub;
-    Card lowSpade;
-    Card highSpade;
-    Card lowDiamond;
-    Card highDiamond;
-    Card lowHeart;
-    Card highHeart;
+    private ArrayList<String> suits = new ArrayList<String>();;
+
+    // placer vars used to hold high/low card for suit.
+    private Card lowClub;
+    private Card highClub;
+    private Card lowSpade;
+    private Card highSpade;
+    private Card lowDiamond;
+    private Card highDiamond;
+    private Card lowHeart;
+    private Card highHeart;
 
     // temp cards
-    Card lowCard;
-    Card highCard;
+    private Card lowCard;
+    private Card highCard;
 
     public Board()
     {
 
     }
 
-    public void addBoard(String[] b) throws InvalidBoard {
-        if (b.length != 4)
+    /**
+     * Takes in a string array of the suit lines in the input file.
+     * 
+     * @param board
+     *            String[]
+     * @throws InvalidBoard
+     */
+    public void addBoard(String[] board) throws InvalidBoard {
+        if (board.length != 4)
             throw new InvalidBoard("Invalid number of lines for a valid board "
-                    + b.toString());
-        for (String line : b)
+                    + board.toString());
+        for (String line : board)
         {
             if (line.startsWith(Card.Suit.CLUBS.getString()))
             {
@@ -77,6 +85,14 @@ public class Board
         suits.add(clubs);
     }
 
+    /**
+     * Checks to see if a suit line is valid and has valid characters for the
+     * line.
+     * 
+     * @param line
+     * @return true if valid line detected.
+     * @throws InvalidBoard
+     */
     private boolean checkOutBoardLine(String line) throws InvalidBoard {
         boolean flag = false;
         try
@@ -131,6 +147,14 @@ public class Board
         return diamonds;
     }
 
+    /**
+     * Will compute all the possiable playable cards for this board.
+     * 
+     * Check for null. There might not be any playable cards for this board.
+     * I.E. All the cards have been played.
+     * 
+     * @return ArrayList<Card>
+     */
     public ArrayList<Card> getPlayableCards() {
         ArrayList<Card> cards = new ArrayList<Card>();
         try
@@ -197,6 +221,14 @@ public class Board
         return cards;
     }
 
+    /**
+     * Computes the next low/high card for a given suit. returns an array of
+     * Cards.
+     * 
+     * @param lowCard
+     * @param highCard
+     * @return
+     */
     private Collection<? extends Card> getNextCards(Card lowCard, Card highCard) {
         ArrayList<Card> c = new ArrayList<>();
 
