@@ -14,7 +14,9 @@ import dicecardgame.hand.Hand;
 public class ComputeCardTest
 {
     String handString = "AC QH 9D 3S JH KC 7C KH 8D QD";
+    String handStringPass = "AC QH 9D 3S JH KC 9C KH 8D QD";
     String[] board = new String[] { "C", "D7", "S59", "H49" };
+    String[] boardPass = new String[] { "C7", "D", "S", "H" };
 
 
     @Test
@@ -37,6 +39,29 @@ public class ComputeCardTest
             e.printStackTrace();
         }
         
+    }
+    
+    @Test
+    public void testPass() {
+        try
+        {
+            Hand hand = new Hand(handStringPass);
+            Board b = new Board(boardPass);
+            ComputeCardAB cc = new ComputeCardFirstFound(hand, b);
+            assertEquals(cc.pickCard(), null);
+        }
+        catch (InvalidCard e)
+        {
+            e.printStackTrace();
+        }
+        catch (InvalidBoard e)
+        {
+            e.printStackTrace();
+        }
+        catch (Exception e)
+        {
+            e.printStackTrace();
+        }
     }
 
 }
