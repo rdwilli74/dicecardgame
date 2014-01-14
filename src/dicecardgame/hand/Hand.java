@@ -30,7 +30,11 @@ public class Hand {
 		}
 	}
 
-	public String toString()
+	public ArrayList<Card> getCards() {
+        return cards;
+    }
+
+    public String toString()
 	{
 	    StringBuffer hand = new StringBuffer();
 	    if (cards != null)

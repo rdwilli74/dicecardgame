@@ -3,7 +3,7 @@
  */
 package dicecardgame;
 
-import dicecardgame.ai.ComputeCard;
+import dicecardgame.ai.ComputeCardFirstFound;
 import dicecardgame.board.Board;
 import dicecardgame.exceptions.InvalidBoard;
 import dicecardgame.exceptions.InvalidCard;
@@ -34,7 +34,7 @@ public class PlayGame
             Hand hand = new Hand(inFile.getHand());
             Board board = new Board();
             board.addBoard(inFile.getSuits());
-            ComputeCard cc = new ComputeCard(hand, board);
+            ComputeCardFirstFound cc = new ComputeCardFirstFound(hand, board);
             
         }
         catch (InvalidCard e)
