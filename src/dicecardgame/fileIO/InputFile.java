@@ -6,6 +6,11 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.StringTokenizer;
 
+import dicecardgame.board.Board;
+import dicecardgame.exceptions.InvalidBoard;
+import dicecardgame.exceptions.InvalidCard;
+import dicecardgame.hand.Hand;
+
 /**
  * @author mom
  * 
@@ -17,8 +22,8 @@ public class InputFile
 {
 
     Path inputFile;
-    String hand;
-    String[] suits;
+    String handString;
+    String[] suitString;
 
     /**
      * InputFile will crate a java Path for reading the file.
@@ -37,8 +42,10 @@ public class InputFile
      * Checks the input file is valid and has only 4 suits and  the cards in your hand are valid cards.
      * @return
      * @throws IOException
+     * @throws InvalidCard 
+     * @throws InvalidBoard 
      */
-    public boolean isValid() throws IOException {
+    public boolean isValid() throws IOException, InvalidCard, InvalidBoard {
         Boolean flag = Files.isReadable(inputFile);
         if (flag) flag = Files.isDirectory(inputFile);
         if (!flag)
@@ -50,23 +57,25 @@ public class InputFile
             if (st.countTokens() == 5)
             {
                 flag = true;
-                hand = st.nextToken().trim();
+                handString = st.nextToken().trim();
 
                 int lines = st.countTokens();
-                suits = new String[lines];
+                suitString = new String[lines];
                 for (int i = 0; i < lines; i++)
-                    suits[i] = st.nextToken().trim();
-                System.out.println(suits);
+                    suitString[i] = st.nextToken().trim();
+                Hand hand = new Hand(handString);
+                Board board = new Board(suitString);
+                
             }
         }
         return flag;
     }
 
-    public String getHand() {
-        return hand;
+    public String getHandString() {
+        return handString;
     }
 
     public String[] getSuits() {
-        return suits;
+        return suitString;
     }
 }

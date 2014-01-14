@@ -31,7 +31,7 @@ public class PlayGame
 
         try
         {
-            Hand hand = new Hand(inFile.getHand());
+            Hand hand = new Hand(inFile.getHandString());
             Board board = new Board();
             board.addBoard(inFile.getSuits());
             ComputeCardFirstFound cc = new ComputeCardFirstFound(hand, board);

@@ -6,6 +6,8 @@ import java.io.IOException;
 
 import org.junit.Test;
 
+import dicecardgame.exceptions.InvalidBoard;
+import dicecardgame.exceptions.InvalidCard;
 import dicecardgame.fileIO.InputFile;
 
 public class InputTextTest
@@ -31,6 +33,15 @@ public class InputTextTest
         {
             fail("File " + fileName + " can't be read ");
         }
+        catch (InvalidCard e)
+        {
+            fail("Invalid card found in hand line: "
+                    + inputFile.getHandString());
+        }
+        catch (InvalidBoard e)
+        {
+            fail("Invalid played car line: " + inputFile.getSuits());
+        }
     }
 
     @Test
@@ -39,8 +50,8 @@ public class InputTextTest
         try
         {
             inputFile.isValid();
-            
-            assertEquals(inputFile.getHand(),
+
+            assertEquals(inputFile.getHandString(),
                     "4H 5H 7D AC QH 9D 3S JH KC 7C KH 8D QD");
         }
         catch (IOException e)
@@ -48,12 +59,21 @@ public class InputTextTest
             fail("File " + fileName + " is not a valid format");
             e.printStackTrace();
         }
+        catch (InvalidCard e)
+        {
+            fail("Invalid card found in hand line: "
+                    + inputFile.getHandString());
+        }
+        catch (InvalidBoard e)
+        {
+            fail("Invalid played car line: " + inputFile.getSuits());
+        }
     }
 
     @Test
     public void testGetSuit() {
         inputFile = new InputFile(fileName);
-        String[] suits = new String[]{"C","D7","H49","S"};
+        String[] suits = new String[] { "C", "D7", "H49", "S" };
         try
         {
             inputFile.isValid();
@@ -63,6 +83,15 @@ public class InputTextTest
         {
             fail("File " + fileName + " is not a valid format");
             e.printStackTrace();
+        }
+        catch (InvalidCard e)
+        {
+            fail("Invalid card found in hand line: "
+                    + inputFile.getHandString());
+        }
+        catch (InvalidBoard e)
+        {
+            fail("Invalid played car line: " + inputFile.getSuits());
         }
     }
 }

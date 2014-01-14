@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Collection;
 
 import dicecardgame.card.Card;
-import dicecardgame.card.Card.Suit;
 import dicecardgame.exceptions.InvalidBoard;
 import dicecardgame.exceptions.InvalidCard;
 
